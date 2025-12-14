@@ -1,0 +1,283 @@
+# Copyright (C) 2024 Rapid Pay
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rapid Pay 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rapid-pay\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: rapid-pay.php
+msgid "Rapid Pay requires WooCommerce to be installed and active."
+msgstr ""
+
+msgid "Rapid Pay"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Accept manual payments through bKash, Nagad, Rocket, and Upay."
+msgstr ""
+
+msgid "Pay securely using bKash, Nagad, Rocket, or Upay."
+msgstr ""
+
+msgid "Thank you for your order. Your payment is being verified."
+msgstr ""
+
+msgid "Payment Method"
+msgstr ""
+
+msgid "Select payment method"
+msgstr ""
+
+msgid "bKash"
+msgstr ""
+
+msgid "Nagad"
+msgstr ""
+
+msgid "Rocket"
+msgstr ""
+
+msgid "Upay"
+msgstr ""
+
+msgid "Sender Mobile Number"
+msgstr ""
+
+msgid "Transaction ID (TrxID)"
+msgstr ""
+
+msgid "Please select a payment method."
+msgstr ""
+
+msgid "Invalid payment method selected."
+msgstr ""
+
+msgid "Please enter your sender mobile number."
+msgstr ""
+
+msgid "Please enter a valid mobile number (e.g., 01712345678)."
+msgstr ""
+
+msgid "Please enter the transaction ID."
+msgstr ""
+
+msgid "Transaction ID must be at least 5 characters long."
+msgstr ""
+
+msgid "Minimum payment amount is %s."
+msgstr ""
+
+msgid "Maximum payment amount is %s."
+msgstr ""
+
+msgid "Awaiting payment verification."
+msgstr ""
+
+msgid "Payment Details"
+msgstr ""
+
+msgid "Payment Method:"
+msgstr ""
+
+msgid "Sender Phone:"
+msgstr ""
+
+msgid "Transaction ID:"
+msgstr ""
+
+msgid "Rapid Pay Dashboard"
+msgstr ""
+
+msgid "Today's Earnings"
+msgstr ""
+
+msgid "This Week"
+msgstr ""
+
+msgid "This Month"
+msgstr ""
+
+msgid "Total Earnings"
+msgstr ""
+
+msgid "Income Chart"
+msgstr ""
+
+msgid "All Statuses"
+msgstr ""
+
+msgid "On Hold"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Refunded"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Recent Orders"
+msgstr ""
+
+msgid "Total: %d orders"
+msgstr ""
+
+msgid "Order ID"
+msgstr ""
+
+msgid "Customer"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Sender Phone"
+msgstr ""
+
+msgid "TrxID"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Change Status"
+msgstr ""
+
+msgid "Mark Completed"
+msgstr ""
+
+msgid "Mark Refunded"
+msgstr ""
+
+msgid "Mark Cancelled"
+msgstr ""
+
+msgid "Mark Pending"
+msgstr ""
+
+msgid "No orders found."
+msgstr ""
+
+msgid "Permission denied."
+msgstr ""
+
+msgid "Invalid parameters."
+msgstr ""
+
+msgid "Order status updated successfully."
+msgstr ""
+
+msgid "Failed to update order status."
+msgstr ""
+
+msgid "Status updated from Rapid Pay dashboard."
+msgstr ""
+
+msgid "Rapid Pay Settings"
+msgstr ""
+
+msgid "Settings saved successfully."
+msgstr ""
+
+msgid "Enabled Payment Methods"
+msgstr ""
+
+msgid "Select which payment methods to enable on checkout."
+msgstr ""
+
+msgid "Checkout Instructions"
+msgstr ""
+
+msgid "Instructions displayed on the checkout page."
+msgstr ""
+
+msgid "Admin Phone Numbers"
+msgstr ""
+
+msgid "Enter your payment receiving phone numbers (one per line). These will be displayed on the checkout page."
+msgstr ""
+
+msgid "Minimum Payment Amount"
+msgstr ""
+
+msgid "Set minimum order amount for this payment method. Set to 0 to disable."
+msgstr ""
+
+msgid "Maximum Payment Amount"
+msgstr ""
+
+msgid "Set maximum order amount for this payment method. Set to 0 to disable."
+msgstr ""
+
+msgid "Auto Expire Pending Orders"
+msgstr ""
+
+msgid "Enable automatic cancellation of pending orders"
+msgstr ""
+
+msgid "Automatically cancel orders that remain on-hold after specified hours."
+msgstr ""
+
+msgid "Auto Expire After (Hours)"
+msgstr ""
+
+msgid "Number of hours after which pending orders will be automatically cancelled (1-168 hours)."
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+msgid "System Information"
+msgstr ""
+
+msgid "Plugin Version:"
+msgstr ""
+
+msgid "WordPress Version:"
+msgstr ""
+
+msgid "WooCommerce Version:"
+msgstr ""
+
+msgid "PHP Version:"
+msgstr ""
+
+
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
