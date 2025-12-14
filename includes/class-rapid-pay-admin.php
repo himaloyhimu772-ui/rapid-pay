@@ -61,19 +61,19 @@ class Rapid_Pay_Admin {
 			<div class="rapid-pay-analytics-cards">
 				<div class="rapid-pay-card">
 					<h3><?php esc_html_e( 'Today\'s Earnings', 'rapid-pay' ); ?></h3>
-					<p class="amount"><?php echo self::format_currency( $analytics['today'] ); ?></p>
+					<p class="amount"><?php echo esc_html( self::format_currency( $analytics["today"] ) ); ?></p>
 				</div>
 				<div class="rapid-pay-card">
 					<h3><?php esc_html_e( 'This Week', 'rapid-pay' ); ?></h3>
-					<p class="amount"><?php echo self::format_currency( $analytics['week'] ); ?></p>
+					<p class="amount"><?php echo esc_html( self::format_currency( $analytics["week"] ) ); ?></p>
 				</div>
 				<div class="rapid-pay-card">
 					<h3><?php esc_html_e( 'This Month', 'rapid-pay' ); ?></h3>
-					<p class="amount"><?php echo self::format_currency( $analytics['month'] ); ?></p>
+					<p class="amount"><?php echo esc_html( self::format_currency( $analytics["month"] ) ); ?></p>
 				</div>
 				<div class="rapid-pay-card">
 					<h3><?php esc_html_e( 'Total Earnings', 'rapid-pay' ); ?></h3>
-					<p class="amount"><?php echo self::format_currency( $analytics['total'] ); ?></p>
+					<p class="amount"><?php echo esc_html( self::format_currency( $analytics["total"] ) ); ?></p>
 				</div>
 			</div>
 
@@ -108,7 +108,7 @@ class Rapid_Pay_Admin {
 			<!-- Orders Table -->
 			<div class="rapid-pay-orders-table">
 				<h2><?php esc_html_e( 'Recent Orders', 'rapid-pay' ); ?></h2>
-				<p><?php printf( esc_html__( 'Total: %d orders', 'rapid-pay' ), $total_count ); ?></p>
+				<p><?php printf( esc_html__( "Total: %d orders", "rapid-pay" ), esc_html( $total_count ) ); ?></p>
 
 				<?php if ( ! empty( $orders ) ) : ?>
 					<table class="wp-list-table widefat fixed striped">
@@ -138,7 +138,7 @@ class Rapid_Pay_Admin {
 									<td><?php echo esc_html( $order->customer_phone ); ?></td>
 									<td><?php echo esc_html( $order->sender_phone ); ?></td>
 									<td><?php echo esc_html( $order->transaction_id ); ?></td>
-									<td><?php echo self::format_currency( $order->amount ); ?></td>
+									<td><?php echo esc_html( self::format_currency( $order->amount ) ); ?></td>
 									<td><?php echo esc_html( ucfirst( $order->payment_method ) ); ?></td>
 									<td><?php echo esc_html( gmdate( 'Y-m-d H:i', strtotime( $order->created_at ) ) ); ?></td>
 									<td>

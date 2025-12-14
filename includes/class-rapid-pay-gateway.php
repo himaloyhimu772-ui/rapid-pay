@@ -84,7 +84,7 @@ class Rapid_Pay_Gateway extends WC_Payment_Gateway {
 		$admin_phones = isset( $settings['admin_phones'] ) ? $settings['admin_phones'] : array();
 
 		if ( $this->description ) {
-			echo wpautop( wp_kses_post( $this->description ) );
+			echo wp_kses_post( wpautop( $this->description ) );
 		}
 
 		echo '<div class="rapid-pay-payment-fields">';
@@ -117,7 +117,7 @@ class Rapid_Pay_Gateway extends WC_Payment_Gateway {
 						if ( ! empty( $phone ) ) {
 							$label .= ' (' . esc_html( $phone ) . ')';
 						}
-						echo '<option value="' . esc_attr( $method ) . '" data-phone="' . esc_attr( $phone ) . '">' . $label . '</option>';
+						echo '<option value="' . esc_attr( $method ) . '" data-phone="' . esc_attr( $phone ) . '">' . esc_html( $label ) . '</option>';
 				}
 			}
 
@@ -128,7 +128,7 @@ class Rapid_Pay_Gateway extends WC_Payment_Gateway {
 		// Dynamic instruction area.
 		echo '<div id="rapid-pay-dynamic-instructions" class="rapid-pay-instructions-box" style="display:none;">';
 		if ( ! empty( $instruction_text ) ) {
-			echo '<div class="rapid-pay-static-instructions">' . wpautop( wp_kses_post( $instruction_text ) ) . '</div>';
+			echo '<div class="rapid-pay-static-instructions">' . wp_kses_post( wpautop( $instruction_text ) ) . '</div>';
 		}
 		echo '</div>';
 

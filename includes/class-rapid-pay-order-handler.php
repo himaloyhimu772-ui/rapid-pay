@@ -33,7 +33,7 @@ class Rapid_Pay_Order_Handler {
 		// Check if order already exists.
 		$existing = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT id FROM $table_name WHERE order_id = %d",
+				"SELECT id FROM " . esc_sql( $table_name ) . " WHERE order_id = %d",
 				$order_id
 			)
 		);
@@ -115,7 +115,7 @@ class Rapid_Pay_Order_Handler {
 
 		$orderby = sanitize_sql_orderby( $args['orderby'] . ' ' . $args['order'] );
 
-		$query = "SELECT * FROM $table_name WHERE $where_sql ORDER BY $orderby LIMIT %d OFFSET %d";
+		$query = "SELECT * FROM " . esc_sql( $table_name ) . " WHERE $where_sql ORDER BY " . esc_sql( $orderby ) . " LIMIT %d OFFSET %d";
 		$where_values[] = $args['limit'];
 		$where_values[] = $args['offset'];
 
@@ -157,7 +157,7 @@ class Rapid_Pay_Order_Handler {
 
 		$where_sql = implode( ' AND ', $where );
 
-		$query = "SELECT COUNT(*) FROM $table_name WHERE $where_sql";
+		$query = "SELECT COUNT(*) FROM " . esc_sql( $table_name ) . " WHERE $where_sql";
 
 		if ( ! empty( $where_values ) ) {
 			$query = $wpdb->prepare( $query, $where_values );
@@ -220,7 +220,7 @@ class Rapid_Pay_Order_Handler {
 
 		$orders = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT order_id FROM $table_name WHERE status = 'on-hold' AND created_at < %s",
+				"SELECT order_id FROM " . esc_sql( $table_name ) . " WHERE status = 'on-hold' AND created_at < %s",
 				$expire_date
 			)
 		);

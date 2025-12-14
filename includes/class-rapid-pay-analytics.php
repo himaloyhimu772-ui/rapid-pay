@@ -37,7 +37,7 @@ class Rapid_Pay_Analytics {
 		$today_end = gmdate( 'Y-m-d 23:59:59' );
 		$today_earnings = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT SUM(amount) FROM $table_name WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
+				"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
 				$today_start,
 				$today_end
 			)
@@ -48,7 +48,7 @@ class Rapid_Pay_Analytics {
 		$week_end = gmdate( 'Y-m-d 23:59:59', strtotime( 'sunday this week' ) );
 		$week_earnings = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT SUM(amount) FROM $table_name WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
+				"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
 				$week_start,
 				$week_end
 			)
@@ -59,7 +59,7 @@ class Rapid_Pay_Analytics {
 		$month_end = gmdate( 'Y-m-t 23:59:59' );
 		$month_earnings = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT SUM(amount) FROM $table_name WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
+				"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
 				$month_start,
 				$month_end
 			)
@@ -67,7 +67,7 @@ class Rapid_Pay_Analytics {
 
 		// Calculate total earnings.
 		$total_earnings = $wpdb->get_var(
-			"SELECT SUM(amount) FROM $table_name WHERE status = 'completed'"
+			"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed'"
 		);
 
 		// Get chart data for the last 30 days.
@@ -105,7 +105,7 @@ class Rapid_Pay_Analytics {
 
 			$amount = $wpdb->get_var(
 				$wpdb->prepare(
-					"SELECT SUM(amount) FROM $table_name WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
+					"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
 					$start,
 					$end
 				)
@@ -131,7 +131,7 @@ class Rapid_Pay_Analytics {
 		$table_name = $wpdb->prefix . 'rapid_pay_orders';
 
 		$results = $wpdb->get_results(
-			"SELECT payment_method, SUM(amount) as total FROM $table_name WHERE status = 'completed' GROUP BY payment_method"
+			"SELECT payment_method, SUM(amount) as total FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' GROUP BY payment_method"
 		);
 
 		$earnings = array(
@@ -160,11 +160,11 @@ class Rapid_Pay_Analytics {
 
 		$table_name = $wpdb->prefix . 'rapid_pay_orders';
 
-		$total_orders = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name" );
-		$completed_orders = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE status = 'completed'" );
-		$pending_orders = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE status IN ('on-hold', 'pending')" );
-		$cancelled_orders = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE status = 'cancelled'" );
-		$refunded_orders = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE status = 'refunded'" );
+		$total_orders = $wpdb->get_var( "SELECT COUNT(*) FROM " . esc_sql( $table_name ) );
+		$completed_orders = $wpdb->get_var( "SELECT COUNT(*) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed'" );
+		$pending_orders = $wpdb->get_var( "SELECT COUNT(*) FROM " . esc_sql( $table_name ) . " WHERE status IN ('on-hold', 'pending')" );
+		$cancelled_orders = $wpdb->get_var( "SELECT COUNT(*) FROM " . esc_sql( $table_name ) . " WHERE status = 'cancelled'" );
+		$refunded_orders = $wpdb->get_var( "SELECT COUNT(*) FROM " . esc_sql( $table_name ) . " WHERE status = 'refunded'" );
 
 		return array(
 			'total'     => intval( $total_orders ),
@@ -192,7 +192,7 @@ class Rapid_Pay_Analytics {
 
 		$total_earnings = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT SUM(amount) FROM $table_name WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
+				"SELECT SUM(amount) FROM " . esc_sql( $table_name ) . " WHERE status = 'completed' AND created_at >= %s AND created_at <= %s",
 				$start,
 				$end
 			)
